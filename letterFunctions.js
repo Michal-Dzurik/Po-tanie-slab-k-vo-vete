@@ -261,14 +261,7 @@ function allAre(letters,letterClass) {
 function clearRedundantSymbols(result) {
     result = result.toString();
     try{
-        result = result.replace(".",''); //remove .
-        result = result.replace("?", ''); //remove ?
-        result = result.replace(";", ''); //remove ;
-        result = result.replace("%", ''); //remove %
-        result = result.replace("°", ''); //remove °
-        result = result.replace("\\", ''); //remove \
-        result = result.replace("\/", ''); //remove /
-        result = result.replace(/,/g, ''); // remove ,
+        result = result.replace(/[^\w\s]+/g, '');
     }catch (e) {
         console.log(e)
     }
